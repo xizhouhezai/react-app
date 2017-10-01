@@ -18,7 +18,7 @@ import TabNavigator from 'react-native-tab-navigator';
 export default class mooc_gp extends Component {
   constructor(props) {
     super(props);
-    this.state = {selectedTab: 'home'}
+    this.state = {selectedTab: 'tb_popular',}
   }
   render() {
     return (
