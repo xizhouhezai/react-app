@@ -25,7 +25,8 @@ import {
   addNavigationHelpers,
   DrawerNavigator
 } from 'react-navigation';
-import Home from './js/Home';
+import { App } from './js';
+import { Actions } from 'react-native-router-flux';
 
 export default class mooc_gp extends Component {
   constructor(props) {
@@ -61,6 +62,11 @@ export default class mooc_gp extends Component {
                 </Text>
               </View>
               <MyButton />
+              <Text
+                onPress={() => Actions.home()}
+              >
+                home
+              </Text>
             </ScrollView>
           </TabNavigator.Item>
           <TabNavigator.Item
