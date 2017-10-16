@@ -25,8 +25,6 @@ import {
   addNavigationHelpers,
   DrawerNavigator
 } from 'react-navigation';
-import { App } from './js';
-import { Actions } from 'react-native-router-flux';
 
 export default class mooc_gp extends Component {
   constructor(props) {
@@ -62,11 +60,6 @@ export default class mooc_gp extends Component {
                 </Text>
               </View>
               <MyButton />
-              <Text
-                onPress={() => Actions.home()}
-              >
-                home
-              </Text>
             </ScrollView>
           </TabNavigator.Item>
           <TabNavigator.Item
@@ -130,7 +123,6 @@ export default class mooc_gp extends Component {
             <View style={{
               flex: 1
             }}>
-              <MyApp></MyApp>
             </View>
           </TabNavigator.Item>
         </TabNavigator>
@@ -138,10 +130,6 @@ export default class mooc_gp extends Component {
     );
   }
 }
-
-const MyApp = DrawerNavigator({
-  Home: {screen: Home},
-})
 
 class MyButton extends Component {
   _onPressButton() {
