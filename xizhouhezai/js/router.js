@@ -7,19 +7,14 @@ import {
 import { List, ListItem } from 'react-native-elements';
 import { StackNavigator } from 'react-navigation';
 
+import HomePage from './page/HomePage';
 
-class HomePage extends Component {
+class Index extends Component {
     render() {
         const list = [
             {
-                'routeName': 'Mooc_gp'
-            },
-            {
-                'routeName': 'Props'
-            },
-            {
-                'routeName': 'State'
-            },
+                'routeName': 'HomePage'
+            }
         ]
         return(
             <View style={styles.container}>
@@ -32,6 +27,7 @@ class HomePage extends Component {
                                 title={data.routeName}
                                 hideChevron={true}
                                 rightIcon={{name: 'chevron-right'}}
+                                onPress={()=>this.props.navigation.navigate(data.routeName)}
                             />
                         )) 
                     }
@@ -43,10 +39,16 @@ class HomePage extends Component {
 
 const Root = StackNavigator({
     Home: {
+        screen: Index,
+        navigationOptions: {
+            title: 'Index'
+        }
+    },
+    HomePage: {
         screen: HomePage,
         navigationOptions: {
-            title: 'Home'
-        }
+            title: '逛丢'
+        } 
     }
 })
 
