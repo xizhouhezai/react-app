@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 import {
     View,
     Text,
@@ -7,7 +7,7 @@ import {
     StatusBar,
     Image
 } from 'react-native';
-import PropTypes from 'prop-types';
+
 
 const NAV_BAR_HEIGHT_IOS = 44;
 const NAV_BAR_HEIGHT_ANDROID = 50;

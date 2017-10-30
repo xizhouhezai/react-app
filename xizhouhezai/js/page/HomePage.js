@@ -3,12 +3,15 @@ import {
     View,
     StyleSheet,
     Image,
+    Button
 } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator';
 
+// 底部的分页
 import Home from './GDHome';
 import Ht from './GDHt';
 import HourList from './GDHourList';
+
 
 export default class HomePage extends Component {
     selectedTabNavigator(selectedTab, title, iconImage, SelectedIconImage, component) {
@@ -20,7 +23,7 @@ export default class HomePage extends Component {
                 renderSelectedIcon={() => <Image source={{uri: SelectedIconImage}} style={styles.image}/>}
                 badgeText=""
                 selectedTitleStyle={{color: '#000'}}
-                onPress={() => this.setState({ selectedTab: selectedTab })}>
+                onPress={() => this.setState({ selectedTab: selectedTab }) }>
                 {component}
             </TabNavigator.Item>
         )
@@ -37,7 +40,7 @@ export default class HomePage extends Component {
         return(
             <TabNavigator>
                 {/* 首页 */}
-                {this.selectedTabNavigator('home', 'Home', 'tabbar_home_30x30', 'tabbar_home_selected_30x30', <Home />)}
+                {this.selectedTabNavigator('home', 'Home', 'tabbar_home_30x30', 'tabbar_home_selected_30x30', <Home getNavigation={this.props.navigation}/>)}
                 {/* 海淘 */}
                 {this.selectedTabNavigator('ht', '海淘', 'tabbar_abroad_30x30', 'tabbar_abroad_selected_30x30', <Ht />)}
                 {/* 小时风云榜 */}

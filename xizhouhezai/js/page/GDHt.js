@@ -2,13 +2,21 @@ import React, { Component } from 'react';
 import {
     View,
     Image,
+    TouchableOpacity,
 } from 'react-native';
+
+import NavigationBar from '../component/NavigationBar';
 
 export default class Ht extends Component {
     render() {
         return(
-            <View style={{flex: 1, backgroundColor: 'yellow'}}>
-
+            <View style={{flex: 1,}}>
+                <NavigationBar
+                    titleView={<Image style={{width: 66, height: 20}} source={{uri: 'navtitle_abroad_down_66x20'}}/>}
+                    style={{backgroundColor:'#fff',borderBottomWidth: 1,borderBottomColor: '#eee'}}
+                    leftButton={<TouchableOpacity style={{padding: 8}}><Image style={{width: 26, height: 26,tintColor:'green'}} source={{uri: 'hot_icon_20x20'}}/></TouchableOpacity>}
+                    rightButton = {<TouchableOpacity style={{padding: 8}}><Image style={{width: 26, height: 26,tintColor:'green'}} source={{uri: 'search_icon_20x20'}}/></TouchableOpacity>}
+                />
             </View>
         )
     }

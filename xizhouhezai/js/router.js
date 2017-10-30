@@ -8,9 +8,11 @@ import { List, ListItem } from 'react-native-elements';
 import { StackNavigator } from 'react-navigation';
 
 // 自定义组件
-// import NavBar from './component/NavBar'
+import NavigationBar from './component/NavigationBar';
 
+// 页面
 import HomePage from './page/HomePage';
+import HalfHour from './page/GDHalfHour';
 
 class Index extends Component {
 
@@ -23,9 +25,10 @@ class Index extends Component {
         ]
         return(
             <View style={styles.container}>
-                {/* <NavBar
-                    titleItems='西洲何在'
-                /> */}
+                <NavigationBar
+                    title='西洲何在'
+                    style={{backgroundColor:'#F08080'}}
+                />
                 <List>
                     {
                         list.map((data,i) => (
@@ -57,7 +60,13 @@ const Root = StackNavigator({
         navigationOptions: {
             title: '逛丢'
         } 
-    }
+    },
+    HalfHour: {
+        screen: HalfHour,
+        navigationOptions: {
+            title: 'HalfHour'
+        }
+    },
 },{
     headerMode: 'none',
 })
