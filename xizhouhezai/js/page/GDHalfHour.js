@@ -8,6 +8,9 @@ import {
     StyleSheet,
 } from 'react-native';
 
+// 第三方组件
+import {PullList} from 'react-native-pull';
+
 import NavigationBar from '../component/NavigationBar';
 import Cell from '../component/Cell';
 import NoDataView from '../component/NoDataView';
@@ -23,7 +26,7 @@ export default class HalfHour extends Component {
         this.fetchData = this.fetchData.bind(this);
     }
 
-    fetchData() {
+    fetchData(resolve) {
         setTimeout(()=>{
             fetch('http://guangdiu.com/api/gethots.php')
                 .then((res) => res.json())
@@ -33,7 +36,12 @@ export default class HalfHour extends Component {
                         listHide: true
                     })
                 }).done()
-        }, 5000)
+            if(resolve !== undefined) {
+                setTimeout(() => {
+                    resolve();
+                }, 1000);
+            }
+        }, 2000)
     }
 
     componentDidMount() {
@@ -57,7 +65,8 @@ export default class HalfHour extends Component {
             )
         } else {
             return(
-                <ListView
+                <PullList
+                    onPullRelease={(resolve)=> this.fetchData(resolve)}
                     dataSource={this.state.dataSource}
                     renderRow={this.renderRow}
                     initialListSize={5}
