@@ -14,7 +14,10 @@ export default class Ht extends Component {
                 <NavigationBar
                     titleView={<Image style={{width: 66, height: 20}} source={{uri: 'navtitle_abroad_down_66x20'}}/>}
                     style={{backgroundColor:'#fff',borderBottomWidth: 1,borderBottomColor: '#eee'}}
-                    leftButton={<TouchableOpacity style={{padding: 8}}><Image style={{width: 26, height: 26,tintColor:'green'}} source={{uri: 'hot_icon_20x20'}}/></TouchableOpacity>}
+                    leftButton={<TouchableOpacity style={{padding: 8}} onPress={() => {
+                        this.props.getNavigation.navigate('HalfHour')
+                    }
+                }><Image style={{width: 26, height: 26,tintColor:'green'}} source={{uri: 'hot_icon_20x20'}}/></TouchableOpacity>}
                     rightButton = {<TouchableOpacity style={{padding: 8}}><Image style={{width: 26, height: 26,tintColor:'green'}} source={{uri: 'search_icon_20x20'}}/></TouchableOpacity>}
                 />
             </View>

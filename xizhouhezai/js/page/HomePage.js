@@ -42,7 +42,7 @@ export default class HomePage extends Component {
                 {/* 首页 */}
                 {this.selectedTabNavigator('home', 'Home', 'tabbar_home_30x30', 'tabbar_home_selected_30x30', <Home getNavigation={this.props.navigation}/>)}
                 {/* 海淘 */}
-                {this.selectedTabNavigator('ht', '海淘', 'tabbar_abroad_30x30', 'tabbar_abroad_selected_30x30', <Ht />)}
+                {this.selectedTabNavigator('ht', '海淘', 'tabbar_abroad_30x30', 'tabbar_abroad_selected_30x30', <Ht getNavigation={this.props.navigation}/>)}
                 {/* 小时风云榜 */}
                 {this.selectedTabNavigator('hourlist', '小时风云榜', 'tabbar_rank_30x30', 'tabbar_rank_selected_30x30', <HourList />)}
             </TabNavigator>
