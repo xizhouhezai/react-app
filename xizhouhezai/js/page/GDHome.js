@@ -42,6 +42,12 @@ export default class Home extends Component {
                         dataSource: this.state.dataSource.cloneWithRows(resData.data),
                         listHide: false
                     })
+                }).catch(err => {
+                    if(err) {
+                        this.setState({
+                            listHide: true,
+                        })
+                    }
                 }).done()
             if(resolve !== undefined) {
                 setTimeout(() => {
