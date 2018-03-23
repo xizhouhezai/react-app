@@ -10,7 +10,7 @@ const { width,height } = Dimensions.get('window');
 export default class LauncherPage extends Component {
     render() {
         return(
-            <Image source={{uri: launchimage}} style={styles.imageStyle} />
+            <Image source={{uri: 'launchimage'}} style={styles.imageStyle} />
         )
     }
 }
